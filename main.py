@@ -1,0 +1,1 @@
+print("Cognitive Interview Assistant - Initializing...")
