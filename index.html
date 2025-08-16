@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cognitive Interview Assistant</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.7.2/socket.io.min.js"></script>
+    <style>
+        body { font-family: system-ui, sans-serif; display: flex; color: #E0E0E0; background-color: #121212; }
+        .main { flex-grow: 1; padding: 20px; }
+        .sidebar { width: 280px; padding: 20px; border-left: 1px solid #444; background-color: #1E1E1E; }
+        h1, h3 { color: #FFFFFF; }
+        button { background-color: #007BFF; color: white; border: none; padding: 10px 15px; border-radius: 5px; cursor: pointer; transition: background-color 0.2s; }
+        button:hover { background-color: #0056b3; }
+        button:disabled { background-color: #555; cursor: not-allowed; }
+        .speaker-btn { display: block; width: 100%; margin-bottom: 10px; background-color: #333; }
+        .speaker-btn.active { background-color: #007BFF; }
+        #transcript { background-color: #1E1E1E; border: 1px solid #444; padding: 15px; height: 60vh; overflow-y: auto; border-radius: 5px; }
+        #score-container { text-align: center; }
+        #score { font-size: 3em; font-weight: bold; color: #00AFFF; }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <h1>Live Transcription</h1>
+        <button id="startButton">Start Session</button>
+        <button id="stopButton" disabled>Stop Session</button>
+        <hr>
+        <h3>Transcript:</h3>
+        <div id="transcript"></div>
+    </div>
+    <div class="sidebar">
+        <h3>Controls</h3>
+        <button class="speaker-btn" id="interviewerBtn">Interviewer Speaking</button>
+        <button class="speaker-btn" id="candidateBtn">Candidate Speaking</button>
+        <hr>
+        <h3>Answer Relevance</h3>
+        <div id="score-container">
+            <div id="score">--%</div>
+        </div>
+    </div>
+
+    <script>
+        const socket = io();
+        let mediaRecorder;
+
+        const startButton = document.getElementById('startButton');
+        const stopButton = document.getElementById('stopButton');
+        const interviewerBtn = document.getElementById('interviewerBtn');
+        const candidateBtn = document.getElementById('candidateBtn');
+        const transcriptDiv = document.getElementById('transcript');
+        const scoreDiv = document.getElementById('score');
+
+        // --- Event Listeners for Controls ---
+        startButton.onclick = async () => {
+            const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+            mediaRecorder = new MediaRecorder(stream);
+            mediaRecorder.ondataavailable = event => {
+                if (event.data.size > 0) socket.emit('audio_data', event.data);
+            };
+            mediaRecorder.start(2000);
+            
+            startButton.disabled = true;
+            stopButton.disabled = false;
+        };
+
+        stopButton.onclick = () => {
+            if (mediaRecorder) {
+                mediaRecorder.stop();
+                startButton.disabled = false;
+                stopButton.disabled = true;
+                socket.disconnect();
+            }
+        };
+
+        interviewerBtn.onclick = () => {
+            socket.emit('speaker_change', {speaker: 'interviewer'});
+            interviewerBtn.classList.add('active');
+            candidateBtn.classList.remove('active');
+        };
+        candidateBtn.onclick = () => {
+            socket.emit('speaker_change', {speaker: 'candidate'});
+            candidateBtn.classList.add('active');
+            interviewerBtn.classList.remove('active');
+        };
+
+        // --- Listen for updates from the server ---
+        socket.on('transcript_update', (data) => {
+            transcriptDiv.innerHTML += `<p><strong>${data.speaker}:</strong> ${data.text}</p>`;
+            transcriptDiv.scrollTop = transcriptDiv.scrollHeight; // Auto-scroll
+        });
+        socket.on('relevance_score', (data) => {
+            scoreDiv.innerText = `${data.score}%`;
+        });
+    </script>
+</body>
+</html>
