@@ -5,8 +5,6 @@ CLAIRE (Cognitive Language and Interview Relevance Engine) is a real-time web ap
 **The Problem**
 Traditional interviews are often hampered by subjectivity, cognitive overload, and communication barriers. An interviewer must simultaneously manage the conversation, take notes, and evaluate complex concepts, which can lead to inconsistent and biased assessments. Project CLAIRE aims to solve this by handling the objective analysis, allowing the interviewer to focus on the candidate.
 
-(A GIF demonstrating the live transcription and relevance score would go here) ![CLAIRE Demo GIF]
-
 **Key Features**
 🎤 Live, High-Accuracy Transcription: Utilizes the Whisper large-v3 model via faster-whisper to provide a real-time transcript of the conversation for both interviewer and candidate.
 
