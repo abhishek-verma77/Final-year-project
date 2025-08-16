@@ -48,7 +48,7 @@ Frontend: HTML, JavaScript (WebRTC, Socket.IO Client)
 
 Audio Processing: FFmpeg
 
-Setup and Installation
+**Setup and Installation**
 Prerequisites:
 
 Python 3.11
