@@ -15,11 +15,11 @@ Traditional interviews are often hampered by subjectivity, cognitive overload, a
 The application uses a client-server model to handle real-time audio processing efficiently:
 1.	Frontend (Browser): The user's browser accesses the microphone using the standard WebRTC API. It captures audio and streams it in 5-second chunks over a persistent WebSocket connection.
 2.	Backend (Python Server):
-o	A Flask-SocketIO server receives the audio chunks from each connected client.
-o	The audio is piped into a dedicated FFmpeg process for each user, which converts it into a standardized raw audio format (16-bit PCM @ 16kHz).
-o	A multi-threaded pipeline feeds the converted audio into the Whisper model for transcription.
-o	The transcribed text is then sent back to the browser to be displayed and is stored in a buffer for analysis.
-o	When the speaker state changes, the Sentence Transformer model is triggered to calculate the relevance score, which is then sent to the browser.
+3. A Flask-SocketIO server receives the audio chunks from each connected client.
+4. The audio is piped into a dedicated FFmpeg process for each user, which converts it into a standardized raw audio format (16-bit PCM @ 16kHz).
+5. A multi-threaded pipeline feeds the converted audio into the Whisper model for transcription.
+6. The transcribed text is then sent back to the browser to be displayed and is stored in a buffer for analysis.
+7. When the speaker state changes, the Sentence Transformer model is triggered to calculate the relevance score, which is then sent to the browser.
 
 ## **Technology Stack**
 1. Backend: Python 3.11, Flask, Flask-SocketIO
