@@ -58,10 +58,9 @@ o	Click "Interviewer Speaking" and ask a question.
 o	Click "Candidate Speaking" and provide an answer.
 o	Click "Interviewer Speaking" again to trigger the analysis. The score will appear on the right.
 5.	Click "Stop Session" to end the transcription.
-6.	
 ## **Project Roadmap (Future Work)**
-•	[ ] 🤖 Automatic Speaker Diarization: Replace the manual speaker selection buttons with an automated diarization model (pyannote.audio) to detect who is speaking automatically.
-•	[ ] 👥 Multi-user Sessions: Implement a "room" system so that an interviewer and candidate can join a shared session from different computers.
-•	[ ] 📊 Communication Clarity Metrics: Add analytics to track filler word usage and the talk-time ratio between speakers.
-•	[ ] 📄 Post-Interview Report: Create a feature to generate a downloadable summary of the interview, including the full transcript and all calculated metrics.
+1. 🤖 Automatic Speaker Diarization: Replace the manual speaker selection buttons with an automated diarization model (pyannote.audio) to detect who is speaking automatically.
+2. 👥 Multi-user Sessions: Implement a "room" system so that an interviewer and candidate can join a shared session from different computers.
+3. 📊 Communication Clarity Metrics: Add analytics to track filler word usage and the talk-time ratio between speakers.
+4. 📄 Post-Interview Report: Create a feature to generate a downloadable summary of the interview, including the full transcript and all calculated metrics.
 
