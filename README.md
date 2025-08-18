@@ -22,13 +22,13 @@ o	The transcribed text is then sent back to the browser to be displayed and is s
 o	When the speaker state changes, the Sentence Transformer model is triggered to calculate the relevance score, which is then sent to the browser.
 
 ## **Technology Stack**
-•	Backend: Python 3.11, Flask, Flask-SocketIO
-•	AI / Machine Learning:
-o	Transcription: faster-whisper (large-v3 model)
-o	Semantic Analysis: sentence-transformers (all-MiniLM-L6-v2 model)
-o	Core Libraries: PyTorch, NumPy
-•	Frontend: HTML, JavaScript (WebRTC, Socket.IO Client)
-•	Audio Processing: FFmpeg
+1. Backend: Python 3.11, Flask, Flask-SocketIO
+2. AI / Machine Learning:
+3. Transcription: faster-whisper (large-v3 model)
+4. Semantic Analysis: sentence-transformers (all-MiniLM-L6-v2 model)
+5. Core Libraries: PyTorch, NumPy
+6. Frontend: HTML, JavaScript (WebRTC, Socket.IO Client)
+7. Audio Processing: FFmpeg
 
 ## **Setup and Installation**
 
