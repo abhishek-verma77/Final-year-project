@@ -1,4 +1,5 @@
-**##Project CLAIRE: A Cognitive Language and Interview Relevance Engine##**
+**Project CLAIRE: A Cognitive Language and Interview Relevance Engine**
+
 CLAIRE (Cognitive Language and Interview Relevance Engine) is a real-time web application designed to act as an intelligent co-pilot for interviewers. It runs alongside any video conferencing tool to provide a layer of objective, data-driven analysis on the conversation, helping to reduce bias and improve the quality of technical interview evaluations.
 
 **The Problem**
