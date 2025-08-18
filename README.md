@@ -6,10 +6,10 @@ CLAIRE (Cognitive Language and Interview Relevance Engine) is a real-time web ap
 Traditional interviews are often hampered by subjectivity, cognitive overload, and communication barriers. An interviewer must simultaneously manage the conversation, take notes, and evaluate complex concepts, which can lead to inconsistent and biased assessments. Project CLAIRE aims to solve this by handling the objective analysis, allowing the interviewer to focus on the candidate.
 
 ## **Key Features**
-•	🎤 Live, High-Accuracy Transcription: Utilizes the Whisper large-v3 model via faster-whisper to provide a real-time transcript of the conversation for both interviewer and candidate.
-•	🧠 Real-time Answer Relevance Score (Core Innovation): Employs a SentenceTransformer model to analyze the semantic meaning of the interviewer's question and the candidate's answer, generating a live score that quantifies how well the answer addressed the question.
-•	🌐 Cross-Platform Web Application: Built with a robust client-server architecture (Flask & WebSockets) that bypasses local audio driver issues and runs on any modern web browser.
-•	🗣️ Speaker State Management: A UI for manually selecting the current speaker (Interviewer/Candidate) to correctly attribute text and trigger analysis.
+1. 🎤 Live, High-Accuracy Transcription: Utilizes the Whisper large-v3 model via faster-whisper to provide a real-time transcript of the conversation for both interviewer and candidate.
+2. 🧠 Real-time Answer Relevance Score (Core Innovation): Employs a SentenceTransformer model to analyze the semantic meaning of the interviewer's question and the candidate's answer, generating a live score that quantifies how well the answer addressed the question.
+3. 🌐 Cross-Platform Web Application: Built with a robust client-server architecture (Flask & WebSockets) that bypasses local audio driver issues and runs on any modern web browser.
+4. 🗣️ Speaker State Management: A UI for manually selecting the current speaker (Interviewer/Candidate) to correctly attribute text and trigger analysis.
 
 ## **System Architecture**
 The application uses a client-server model to handle real-time audio processing efficiently:
