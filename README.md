@@ -73,11 +73,11 @@ The application uses a robust client-server model to handle real-time audio proc
 ## **Setup and Installation**
 ### **Prerequisites:**
 
-* Anaconda (or Miniconda)
+    * Anaconda (or Miniconda)
 
-* A CUDA-enabled NVIDIA GPU (for optimal performance)
+    * A CUDA-enabled NVIDIA GPU (for optimal performance)
 
-* FFmpeg installed and added to your system's PATH.
+    * FFmpeg installed and added to your system's PATH.
 
 1. Create the Conda Environment:
 Open the Anaconda Prompt and create a new, clean environment with Python 3.11.
