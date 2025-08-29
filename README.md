@@ -139,4 +139,4 @@ The server will start, and you can access the application by navigating to http:
 
 * [ ] ☁️ Cloud Deployment: Deploy the application to a cloud service like AWS or Heroku to provide a permanent, publicly accessible URL without needing to run ngrok.
 
-[ ] 💾 Database Integration: Replace the job_profiles.json file and in-memory session data with a proper database (like PostgreSQL or MongoDB) to allow for persistent storage and analysis of interview data over time.
+* [ ] 💾 Database Integration: Replace the job_profiles.json file and in-memory session data with a proper database (like PostgreSQL or MongoDB) to allow for persistent storage and analysis of interview data over time.
