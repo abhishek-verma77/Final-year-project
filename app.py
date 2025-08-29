@@ -1,4 +1,3 @@
-``` python
 import os
 os.environ["KMP_DUPLICATE_LIB_OK"]="TRUE"
 
@@ -277,4 +276,3 @@ def cleanup_client_resources(sid):
 
 if __name__ == '__main__':
     socketio.run(app, host='0.0.0.0', port=5000)
-```
