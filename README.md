@@ -31,11 +31,11 @@ The application uses a robust client-server model to handle real-time audio proc
 
 2. **Backend (Python Server):**
 
-  * A Flask-SocketIO server manages user sessions, unique interview rooms, and all real-time communication.
+    * A Flask-SocketIO server manages user sessions, unique interview rooms, and all real-time communication.
 
-  * The backend handles multiple HTTP routes for the home page, profile management, and report generation.
+    * The backend handles multiple HTTP routes for the home page, profile management, and report generation.
 
-  * For each user, a dedicated FFmpeg process is spawned to convert the browser's audio into a standardized raw audio format (16-bit PCM @ 16kHz).
+    * For each user, a dedicated FFmpeg process is spawned to convert the browser's audio into a standardized raw audio format (16-bit PCM @ 16kHz).
 
 3. A multi-threaded pipeline feeds the converted audio into the Whisper model for transcription and the Sentence Transformer model for analysis.
 
@@ -57,15 +57,16 @@ The application uses a robust client-server model to handle real-time audio proc
    * Core Libraries: PyTorch, NumPy
 
 5. **Frontend (Client-Side)**
- * HTML & CSS: For the structure and styling of the web interface.
 
- * JavaScript: For all user interactions, microphone access (WebRTC), and communication with the server.
+   * HTML & CSS: For the structure and styling of the web interface.
 
- * Audio Processing
+   * JavaScript: For all user interactions, microphone access (WebRTC), and communication with the server.
 
- * FFmpeg: For reliable, real-time audio format conversion on the server.
+   * Audio Processing
 
-* Data Storage
+   * FFmpeg: For reliable, real-time audio format conversion on the server.
+
+   * Data Storage
 
 6. **JSON:** A simple job_profiles.json file is used to persist job titles and keywords.
 
