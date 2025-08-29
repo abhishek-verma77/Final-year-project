@@ -50,21 +50,20 @@ The application uses a robust client-server model to handle real-time audio proc
 
 4. **Artificial Intelligence / Machine Learning**
 
-  * Transcription: faster-whisper (medium.en model) with VAD filtering.
+   * Transcription: faster-whisper (medium.en model) with VAD filtering.
 
-  * Semantic Analysis: sentence-transformers (msmarco-distilbert-base-tas-b model).
+   * Semantic Analysis: sentence-transformers (msmarco-distilbert-base-tas-b model).
 
-  * Core Libraries: PyTorch, NumPy
+   * Core Libraries: PyTorch, NumPy
 
 5. **Frontend (Client-Side)**
+ * HTML & CSS: For the structure and styling of the web interface.
 
-* HTML & CSS: For the structure and styling of the web interface.
+ * JavaScript: For all user interactions, microphone access (WebRTC), and communication with the server.
 
-* JavaScript: For all user interactions, microphone access (WebRTC), and communication with the server.
+ * Audio Processing
 
-* Audio Processing
-
-* FFmpeg: For reliable, real-time audio format conversion on the server.
+ * FFmpeg: For reliable, real-time audio format conversion on the server.
 
 * Data Storage
 
