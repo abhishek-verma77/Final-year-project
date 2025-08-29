@@ -73,44 +73,49 @@ The application uses a robust client-server model to handle real-time audio proc
 ## **Setup and Installation**
 ### **Prerequisites:**
 
-    * Anaconda (or Miniconda)
+   * Anaconda (or Miniconda)
 
-    * A CUDA-enabled NVIDIA GPU (for optimal performance)
+   * A CUDA-enabled NVIDIA GPU (for optimal performance)
 
-    * FFmpeg installed and added to your system's PATH.
+   * FFmpeg installed and added to your system's PATH.
 
 1. Create the Conda Environment:
 Open the Anaconda Prompt and create a new, clean environment with Python 3.11.
 
-Bash
+```Bash
 
 conda create -n claire_final python=3.11
+```
 
 2. Activate the Environment:
 
-Bash
+``` Bash
 
 conda activate claire_final
+```
 
 3. Clone the repository:
 
-Bash
+``` Bash
 
 git clone https://github.com/your-username/project-claire.git
 cd project-claire
-
+```
 4. Install dependencies:
 Create a requirements.txt file with the specified packages and run:
 
-Bash
+``` Bash
 
 python -m pip install -r requirements.txt
+```
+
 5. Run the application:
 
-Bash
+``` Bash
 
 python app.py
 The server will start, and you can access the application by navigating to http://127.0.0.1:5000 in your web browser.
+```
 
 ## **How to Use**
 1. Start the Server: Run python app.py.
