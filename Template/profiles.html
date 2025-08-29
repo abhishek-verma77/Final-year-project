@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Manage Job Profiles - Project CLAIRE</title>
+    <style>
+        body { font-family: system-ui, sans-serif; color: #E0E0E0; background-color: #121212; padding: 20px; }
+        h1, h2 { color: #FFFFFF; }
+        .container { max-width: 800px; margin: auto; }
+        .form-group { margin-bottom: 15px; }
+        label { display: block; margin-bottom: 5px; }
+        input, select, textarea { width: 100%; padding: 8px; background-color: #333; color: white; border: 1px solid #555; border-radius: 4px; box-sizing: border-box; }
+        button { background-color: #007BFF; color: white; border: none; padding: 10px 15px; border-radius: 5px; cursor: pointer; }
+        button:hover { background-color: #0056b3; }
+        .profile-section { background-color: #1E1E1E; padding: 20px; border-radius: 8px; margin-bottom: 20px; }
+        #newProfileSection { display: none; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Manage Job Profiles</h1>
+
+        <div class="profile-section">
+            <h2>Select Existing Profile</h2>
+            <div class="form-group">
+                <label for="profileSelect">Choose a Job Title:</label>
+                <select id="profileSelect">
+                    <option value="">-- Select a Profile --</option>
+                </select>
+            </div>
+            <button id="startInterviewBtn">Start Interview with this Profile</button>
+            <button id="addNewBtn">+</button>
+        </div>
+
+        <div id="newProfileSection" class="profile-section">
+            <h2>Create New Profile</h2>
+            <form id="newProfileForm">
+                <div class="form-group">
+                    <label for="jobTitle">Job Title:</label>
+                    <input type="text" id="jobTitle" required>
+                </div>
+                <div class="form-group">
+                    <label for="keywords">Keywords (comma-separated):</label>
+                    <textarea id="keywords" rows="3" placeholder="e.g., python, api, git, agile"></textarea>
+                </div>
+                <button type="submit">Save Profile</button>
+            </form>
+        </div>
+         <a href="/" style="color: #00AFFF; text-decoration: none; display: block; margin-top: 20px;">&larr; Back to Home</a>
+    </div>
+
+    <script>
+        const profileSelect = document.getElementById('profileSelect');
+        const addNewBtn = document.getElementById('addNewBtn');
+        const newProfileSection = document.getElementById('newProfileSection');
+        const newProfileForm = document.getElementById('newProfileForm');
+        const startInterviewBtn = document.getElementById('startInterviewBtn');
+
+        async function loadProfiles() {
+            const response = await fetch('/get_profiles');
+            const profiles = await response.json();
+            profileSelect.innerHTML = '<option value="">-- Select a Profile --</option>';
+            for (const title in profiles) {
+                const option = document.createElement('option');
+                option.value = title;
+                option.textContent = title;
+                profileSelect.appendChild(option);
+            }
+        }
+
+        addNewBtn.onclick = () => {
+            newProfileSection.style.display = 'block';
+        };
+
+        newProfileForm.onsubmit = async (e) => {
+            e.preventDefault();
+            const title = document.getElementById('jobTitle').value;
+            const keywords = document.getElementById('keywords').value.split(',').map(k => k.trim()).filter(k => k);
+            
+            await fetch('/add_profile', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ title, keywords })
+            });
+
+            alert('Profile saved!');
+            document.getElementById('jobTitle').value = '';
+            document.getElementById('keywords').value = '';
+            newProfileSection.style.display = 'none';
+            loadProfiles();
+        };
+
+        startInterviewBtn.onclick = () => {
+            const selectedProfile = profileSelect.value;
+            if (selectedProfile) {
+                window.location.href = `/create_interview?profile=${encodeURIComponent(selectedProfile)}`;
+            } else {
+                alert('Please select a job profile first.');
+            }
+        };
+
+        loadProfiles();
+    </script>
+</body>
+</html>
