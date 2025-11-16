@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Start Interview - Project CLAIRE</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.7.2/socket.io.min.js"></script>
+    <style>
+        body { font-family: system-ui, sans-serif; text-align: center; color: #E0E0E0; background-color: #121212; padding-top: 100px; }
+        h1 { color: #FFFFFF; }
+        a { background-color: #007BFF; color: white; border: none; padding: 15px 30px; border-radius: 5px; cursor: pointer; text-decoration: none; font-size: 1.2em; }
+        a:hover { background-color: #0056b3; }
+    </style>
+</head>
+<body>
+    <h1>Cognitive Interview Assistant</h1>
+    <p>Manage job profiles or start a new interview session.</p>
+    <br>
+    <a href="/profiles">Manage & Start Interviews</a>
+
+    <script>
+        // This script ensures the server knows a user is on the home page
+        // and handles the auto-shutdown correctly when the tab is closed.
+        const socket = io();
+        window.addEventListener("beforeunload", () => {
+            if (socket.connected) {
+                socket.disconnect();
+            }
+        });
+    </script>
+</body>
+</html>

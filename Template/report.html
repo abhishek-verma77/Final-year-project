@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Interview Report</title>
+    <style>
+        body { font-family: system-ui, sans-serif; color: #333; background-color: #FFF; padding: 30px; }
+        .container { max-width: 800px; margin: auto; }
+        h1, h2, h3 { color: #000; }
+        .section { margin-bottom: 30px; border-bottom: 1px solid #EEE; padding-bottom: 20px; }
+        .metric-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+        .metric { background-color: #F9F9F9; padding: 15px; border-radius: 8px; }
+        .metric-label { font-weight: bold; color: #555; }
+        .metric-value { font-size: 1.5em; }
+        .transcript p { margin: 5px 0; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Interview Summary Report</h1>
+        <h2>Job Profile: {{ profile_title }}</h2>
+
+        <div class="section">
+            <h3>Overall Analysis</h3>
+            <p><strong>Positive Points:</strong> {{ analysis.positive }}</p>
+            <p><strong>Areas for Improvement:</strong> {{ analysis.improvement }}</p>
+        </div>
+
+        <div class="section metric-grid">
+            <div class="metric">
+                <div class="metric-label">Average Relevance Score</div>
+                <div class="metric-value">{{ metrics.avg_relevance }}%</div>
+            </div>
+            <div class="metric">
+                <div class="metric-label">Candidate Filler Words</div>
+                <div class="metric-value">{{ metrics.filler_words.candidate }}</div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h3>Keywords Mentioned</h3>
+            <p>{{ metrics.keywords_mentioned|join(', ') }}</p>
+        </div>
+
+        <div class="section">
+            <h3>Full Transcript</h3>
+            <div class="transcript">
+                {% for entry in transcript %}
+                    <p><strong>{{ entry.speaker.capitalize() }}:</strong> {{ entry.text }}</p>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</body>
+</html>
