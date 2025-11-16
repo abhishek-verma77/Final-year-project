@@ -1,0 +1,28 @@
+{
+    "Software Engineer": [
+        "python",
+        "api",
+        "git",
+        "agile",
+        "problem solving"
+    ],
+    "Data Analyst": [
+        "sql",
+        "python",
+        "pandas",
+        "dashboard",
+        "statistics",
+        "polymorphism",
+        "abstraction",
+        "inheritance",
+        "encapsulation"
+    ],
+    "SQL developer": [
+        "API"
+    ],
+    "web dev": [
+        "react",
+        "javascript"
+    ]
+    
+}

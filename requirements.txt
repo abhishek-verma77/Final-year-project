@@ -1,0 +1,19 @@
+Flask - Web Server
+Flask==3.0.3
+Flask-SocketIO==5.3.6
+simple-websocket==1.0.0
+
+AI - Transcription & Dependencies
+faster-whisper==1.0.2
+ctranslate2
+transformers==4.41.2
+tokenizers==0.19.1
+
+AI - Semantic Analysis & Dependencies
+sentence-transformers==2.7.0
+torch>=2.1.0
+torchaudio>=2.1.0
+torchvision>=0.16.0
+
+numpy>=1.26.0
+scipy

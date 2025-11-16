@@ -1,0 +1,422 @@
+{
+    "Top_20_Job_Profiles": [
+        {
+            "Job_Profile": "Software Engineer",
+            "Critical_Keywords": [
+                "Java",
+                "Python",
+                "C++",
+                "Data Structures",
+                "Algorithms",
+                "System Design"
+            ],
+            "Regular_Keywords": [
+                "Git",
+                "Agile",
+                "REST APIs",
+                "SQL",
+                "NoSQL",
+                "Debugging",
+                "Testing",
+                "OOP",
+                "Microservices",
+                "Cloud"
+            ]
+        },
+        {
+            "Job_Profile": "Data Scientist",
+            "Critical_Keywords": [
+                "Python",
+                "Machine Learning",
+                "Statistics",
+                "Deep Learning",
+                "Data Visualization"
+            ],
+            "Regular_Keywords": [
+                "R",
+                "SQL",
+                "Pandas",
+                "NumPy",
+                "Scikit-learn",
+                "TensorFlow",
+                "PyTorch",
+                "Matplotlib",
+                "Seaborn",
+                "EDA"
+            ]
+        },
+        {
+            "Job_Profile": "AI/ML Engineer",
+            "Critical_Keywords": [
+                "Deep Learning",
+                "Neural Networks",
+                "TensorFlow",
+                "PyTorch",
+                "NLP"
+            ],
+            "Regular_Keywords": [
+                "Python",
+                "Scikit-learn",
+                "Keras",
+                "Transformers",
+                "Model Deployment",
+                "Data Preprocessing",
+                "Computer Vision",
+                "Feature Engineering",
+                "Optimization"
+            ]
+        },
+        {
+            "Job_Profile": "DevOps Engineer",
+            "Critical_Keywords": [
+                "CI/CD",
+                "Docker",
+                "Kubernetes",
+                "AWS",
+                "Terraform"
+            ],
+            "Regular_Keywords": [
+                "Linux",
+                "Monitoring",
+                "Ansible",
+                "Jenkins",
+                "GitLab CI",
+                "Bash",
+                "Networking",
+                "Helm",
+                "Prometheus",
+                "Grafana"
+            ]
+        },
+        {
+            "Job_Profile": "Cloud Architect",
+            "Critical_Keywords": [
+                "AWS",
+                "Azure",
+                "GCP",
+                "Cloud Security",
+                "Infrastructure as Code"
+            ],
+            "Regular_Keywords": [
+                "DevOps",
+                "Terraform",
+                "Kubernetes",
+                "Serverless",
+                "Networking",
+                "Cloud Migration",
+                "Storage",
+                "Disaster Recovery",
+                "IAM",
+                "Load Balancing"
+            ]
+        },
+        {
+            "Job_Profile": "Cybersecurity Analyst",
+            "Critical_Keywords": [
+                "Network Security",
+                "Threat Detection",
+                "Incident Response",
+                "Firewalls",
+                "Encryption"
+            ],
+            "Regular_Keywords": [
+                "SIEM",
+                "Penetration Testing",
+                "Vulnerability Assessment",
+                "IDS/IPS",
+                "Malware Analysis",
+                "Linux Security",
+                "Forensics",
+                "Cloud Security",
+                "SOC",
+                "Risk Assessment"
+            ]
+        },
+        {
+            "Job_Profile": "Full Stack Developer",
+            "Critical_Keywords": [
+                "JavaScript",
+                "React",
+                "Node.js",
+                "Databases",
+                "APIs"
+            ],
+            "Regular_Keywords": [
+                "HTML",
+                "CSS",
+                "MongoDB",
+                "Express.js",
+                "SQL",
+                "REST",
+                "GraphQL",
+                "Webpack",
+                "Redux",
+                "Authentication"
+            ]
+        },
+        {
+            "Job_Profile": "UI/UX Designer",
+            "Critical_Keywords": [
+                "Wireframing",
+                "Prototyping",
+                "User Research",
+                "Interaction Design",
+                "Figma"
+            ],
+            "Regular_Keywords": [
+                "Adobe XD",
+                "Sketch",
+                "Usability Testing",
+                "Accessibility",
+                "Color Theory",
+                "Typography",
+                "Design Thinking",
+                "Personas",
+                "Mockups"
+            ]
+        },
+        {
+            "Job_Profile": "Business Analyst",
+            "Critical_Keywords": [
+                "Requirements Gathering",
+                "Process Mapping",
+                "Stakeholder Management",
+                "SQL",
+                "Data Analysis"
+            ],
+            "Regular_Keywords": [
+                "Agile",
+                "JIRA",
+                "Confluence",
+                "Reporting",
+                "Dashboards",
+                "UML",
+                "Documentation",
+                "Excel",
+                "KPI Analysis"
+            ]
+        },
+        {
+            "Job_Profile": "Product Manager",
+            "Critical_Keywords": [
+                "Roadmap",
+                "Market Research",
+                "Stakeholder Management",
+                "Agile",
+                "Prioritization"
+            ],
+            "Regular_Keywords": [
+                "Scrum",
+                "User Stories",
+                "Metrics",
+                "Customer Feedback",
+                "JIRA",
+                "Confluence",
+                "Wireframing",
+                "A/B Testing",
+                "Competitive Analysis"
+            ]
+        },
+        {
+            "Job_Profile": "Project Manager",
+            "Critical_Keywords": [
+                "Agile",
+                "Scrum",
+                "Risk Management",
+                "Stakeholder Communication",
+                "Budgeting"
+            ],
+            "Regular_Keywords": [
+                "Waterfall",
+                "JIRA",
+                "Confluence",
+                "MS Project",
+                "Kanban",
+                "Scheduling",
+                "Change Management",
+                "Reporting",
+                "Documentation"
+            ]
+        },
+        {
+            "Job_Profile": "Data Engineer",
+            "Critical_Keywords": [
+                "ETL",
+                "Data Warehousing",
+                "SQL",
+                "Big Data",
+                "Python"
+            ],
+            "Regular_Keywords": [
+                "Hadoop",
+                "Spark",
+                "Kafka",
+                "Airflow",
+                "Snowflake",
+                "Data Pipelines",
+                "NoSQL",
+                "Cloud Data Services",
+                "DBT"
+            ]
+        },
+        {
+            "Job_Profile": "Database Administrator",
+            "Critical_Keywords": [
+                "SQL",
+                "Database Security",
+                "Backup & Recovery",
+                "Performance Tuning"
+            ],
+            "Regular_Keywords": [
+                "Oracle",
+                "MySQL",
+                "PostgreSQL",
+                "Indexes",
+                "Replication",
+                "Stored Procedures",
+                "NoSQL",
+                "Clustering",
+                "Monitoring"
+            ]
+        },
+        {
+            "Job_Profile": "Systems Administrator",
+            "Critical_Keywords": [
+                "Linux",
+                "Windows Server",
+                "Networking",
+                "Security",
+                "Scripting"
+            ],
+            "Regular_Keywords": [
+                "Active Directory",
+                "DNS",
+                "DHCP",
+                "PowerShell",
+                "Bash",
+                "Monitoring",
+                "Backups",
+                "Patch Management",
+                "Virtualization"
+            ]
+        },
+        {
+            "Job_Profile": "Network Engineer",
+            "Critical_Keywords": [
+                "Routing",
+                "Switching",
+                "TCP/IP",
+                "Firewalls",
+                "Network Security"
+            ],
+            "Regular_Keywords": [
+                "Cisco",
+                "VPN",
+                "Load Balancing",
+                "LAN/WAN",
+                "QoS",
+                "VoIP",
+                "Troubleshooting",
+                "Monitoring"
+            ]
+        },
+        {
+            "Job_Profile": "AI Research Scientist",
+            "Critical_Keywords": [
+                "Deep Learning",
+                "Mathematics",
+                "Algorithms",
+                "Neural Networks",
+                "Optimization"
+            ],
+            "Regular_Keywords": [
+                "Python",
+                "TensorFlow",
+                "PyTorch",
+                "Reinforcement Learning",
+                "NLP",
+                "Computer Vision",
+                "Research Papers",
+                "Statistics"
+            ]
+        },
+        {
+            "Job_Profile": "Financial Analyst",
+            "Critical_Keywords": [
+                "Financial Modeling",
+                "Valuation",
+                "Excel",
+                "Forecasting",
+                "Risk Analysis"
+            ],
+            "Regular_Keywords": [
+                "Accounting",
+                "Budgeting",
+                "Reporting",
+                "Power BI",
+                "Tableau",
+                "SAP",
+                "Investment Analysis",
+                "Data Analysis"
+            ]
+        },
+        {
+            "Job_Profile": "Digital Marketing Specialist",
+            "Critical_Keywords": [
+                "SEO",
+                "SEM",
+                "Google Analytics",
+                "Content Marketing",
+                "Social Media"
+            ],
+            "Regular_Keywords": [
+                "Email Marketing",
+                "PPC",
+                "AdWords",
+                "Facebook Ads",
+                "Copywriting",
+                "A/B Testing",
+                "Affiliate Marketing",
+                "Campaign Management"
+            ]
+        },
+        {
+            "Job_Profile": "HR Manager",
+            "Critical_Keywords": [
+                "Recruitment",
+                "Employee Relations",
+                "Performance Management",
+                "Compliance",
+                "Onboarding"
+            ],
+            "Regular_Keywords": [
+                "Payroll",
+                "Training",
+                "HRIS",
+                "Employee Engagement",
+                "Compensation",
+                "Exit Interviews",
+                "Policies"
+            ]
+        },
+        {
+            "Job_Profile": "Mechanical Engineer",
+            "Critical_Keywords": [
+                "CAD",
+                "Thermodynamics",
+                "Fluid Mechanics",
+                "Materials Science"
+            ],
+            "Regular_Keywords": [
+                "SolidWorks",
+                "ANSYS",
+                "Matlab",
+                "Manufacturing",
+                "Heat Transfer",
+                "Design",
+                "Simulation",
+                "Product Development"
+            ]
+        }
+    ]
+}

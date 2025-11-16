@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Start Interview - Relevance Engine</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.7.2/socket.io.min.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background: url("https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&w=1600&q=80")
+                  no-repeat center center fixed;
+      background-size: cover;
+      color: #E0E1E9;
+    }
+    .overlay {
+      position: fixed; inset: 0;
+      background: rgba(26,26,29,0.85);
+      z-index: 0;
+    }
+    .page-header {
+      position: fixed;
+      top: 20px; left: 40px;
+      font-size: 1.5em;
+      font-weight: 700;
+      color: #fff;
+      z-index: 2;
+    }
+    .container {
+      position: relative;
+      z-index: 2;
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      min-height: 100vh;
+      text-align: center;
+      padding: 20px;
+    }
+    .content h1 {
+      font-size: 3em;
+      margin-bottom: 1rem;
+      color: #fff;
+    }
+    .content p {
+      font-size: 1.2em;
+      color: #ccc;
+      margin-bottom: 2.5rem;
+    }
+    .content a {
+      background: linear-gradient(135deg, #4A90E2, #00AFFF);
+      padding: 16px 32px;
+      border-radius: 12px;
+      color: #fff;
+      text-decoration: none;
+      font-size: 1.2em;
+      font-weight: 600;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.4);
+      transition: all 0.3s ease;
+    }
+    .content a:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+    }
+
+    /* Feature Section */
+    .features {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 25px;
+      margin-top: 50px;
+    }
+
+    .card {
+      background: rgba(255,255,255,0.08);
+      padding: 20px 15px;
+      border-radius: 16px;
+      width: 200px;
+      text-align: center;
+      backdrop-filter: blur(8px);
+      box-shadow: 0 4px 15px rgba(0,0,0,0.25);
+      transition: transform 0.3s;
+      cursor: pointer;
+      position: relative;
+    }
+
+    .card:hover { transform: translateY(-5px); }
+
+    .card h3 {
+      color: #fff;
+      font-size: 1.05em;
+      font-weight: 600;
+      margin: 0;
+    }
+
+    /* Bubble popup */
+    .bubble {
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translate(-50%, 100%) scale(0.8);
+      background: rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(12px);
+      color: #fff;
+      padding: 14px 18px;
+      border-radius: 14px;
+      width: 220px;
+      text-align: center;
+      font-size: 0.9em;
+      line-height: 1.4;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+      opacity: 0;
+      pointer-events: none;
+      transition: all 0.35s ease;
+      z-index: 5;
+    }
+
+    .bubble.show {
+      transform: translate(-50%, 100%) scale(1);
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .close-btn {
+      position: absolute;
+      top: 6px; right: 10px;
+      background: transparent;
+      border: none;
+      color: #eee;
+      font-size: 1.1em;
+      cursor: pointer;
+    }
+
+    .close-btn:hover { color: #fff; }
+  </style>
+</head>
+<body>
+  <div class="overlay"></div>
+  <header class="page-header">Relevance Engine</header>
+
+  <div class="container">
+    <div class="content">
+      <h1>Cognitive Interview Assistant</h1>
+      <p>AI-powered insights for smarter hiring decisions.</p>
+      <a href="/profiles">Manage & Start Interviews</a>
+    </div>
+
+    <div class="features">
+      <div class="card" onclick="toggleBubble(this)">
+        <h3>🎤 Real-time<br>Transcription</h3>
+        <div class="bubble">
+          <button class="close-btn" onclick="closeBubble(event,this)">✕</button>
+          <p>AI captures spoken words in real-time with instant logs for structured interviews.</p>
+        </div>
+      </div>
+
+      <div class="card" onclick="toggleBubble(this)">
+        <h3>📊 Smart<br>Analytics</h3>
+        <div class="bubble">
+          <button class="close-btn" onclick="closeBubble(event,this)">✕</button>
+          <p>Measure relevance & clarity of responses instantly with AI-driven metrics.</p>
+        </div>
+      </div>
+
+      <div class="card" onclick="toggleBubble(this)">
+        <h3>📑 Automated<br>Reports</h3>
+        <div class="bubble">
+          <button class="close-btn" onclick="closeBubble(event,this)">✕</button>
+          <p>Generate polished reports with keywords, relevance scores & transcripts.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const socket = io();
+    window.addEventListener("beforeunload", () => {
+      if (socket.connected) socket.disconnect();
+    });
+
+    function toggleBubble(card) {
+      const bubble = card.querySelector('.bubble');
+      const isOpen = bubble.classList.contains('show');
+
+      // Close all bubbles first
+      document.querySelectorAll('.bubble').forEach(b => b.classList.remove('show'));
+
+      // Only open clicked bubble if it wasn’t already open
+      if (!isOpen) bubble.classList.add('show');
+    }
+
+    function closeBubble(event, btn) {
+      event.stopPropagation();
+      btn.parentElement.classList.remove('show');
+    }
+  </script>
+</body>
+</html>
